@@ -1,3 +1,3 @@
-Hosts: database-server
+Hosts: database-server.nithinlearning.site
 App_location: /app
 component: backend
