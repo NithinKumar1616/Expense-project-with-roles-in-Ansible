@@ -1,11 +1,11 @@
 - name: remove existing directory
   ansible.builtin.file:
-    path: "{{ APP_LOCAION }}"
+    path: "{{ App_location }}"
     state: absent
 
 - name: create app directory
   ansible.builtin.file:
-    path: "{{ APP_LOCAION }}"
+    path: "{{ App_location }}"
     state: directory
 
 - name: Unzip the file
