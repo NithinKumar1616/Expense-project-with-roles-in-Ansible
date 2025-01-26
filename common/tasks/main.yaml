@@ -1,13 +1,9 @@
 - name: remove existing directory
-  tags: 
-  - deployment
   ansible.builtin.file:
     path: "{{ APP_LOCAION }}"
     state: absent
 
 - name: create app directory
-  tags: 
-  - deployment
   ansible.builtin.file:
     path: "{{ APP_LOCAION }}"
     state: directory
