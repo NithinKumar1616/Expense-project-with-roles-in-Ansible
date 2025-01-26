@@ -7,6 +7,10 @@
     state: started
     enabled: yes
 
+- name: include common role
+  include_role:
+    name: common
+
 # - name: Remove the file along with the default content
 #   ansible.builtin.file:
 #     path: /usr/share/nginx/html/
