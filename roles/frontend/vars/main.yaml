@@ -1,4 +1,3 @@
 component: frontend
 Hosts: backend-server.nithinlearning.site
 App_locatin: /usr/share/nginx/html
-component: frontend
