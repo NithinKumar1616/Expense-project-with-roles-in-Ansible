@@ -1,0 +1,3 @@
+Hosts: database-server
+App_locatin: /app
+component: backend

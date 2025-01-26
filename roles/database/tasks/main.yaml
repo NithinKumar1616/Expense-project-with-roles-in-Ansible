@@ -1,0 +1,34 @@
+- name: Install dependencies
+  ansible.builtin.pip:
+    name: "{{ item }}"
+    executable: pip3.9
+  loop:
+  - cryptography
+  - PyMySQL
+
+- name: Install Mysql
+  ansible.builtin.package:
+    name: mysql-server
+    state: present
+
+- name: Enable and start Mysql
+  ansible.builtin.service:
+    name: mysqld
+    state: started
+    enabled: yes
+
+- name: Connect to Mysql
+  community.mysql.mysql_info:
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+    login_host: database-server.nithinlearning.site
+  register: mysql_info
+  ignore_errors: true
+
+- name: print the output
+  ansible.builtin.debug:
+    msg: "MySQL info: {{ mysql_info }}"
+
+- name: Create a root password
+  ansible.builtin.command: " mysql_secure_installation --set-root-pass {{ mysql_root_password }} "
+  when: mysql_info.failed is true

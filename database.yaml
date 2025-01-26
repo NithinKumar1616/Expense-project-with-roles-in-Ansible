@@ -1,0 +1,7 @@
+- name: Creating a database server
+  hosts: mysql
+  become: yes
+  
+  roles:
+    - role: database
+  

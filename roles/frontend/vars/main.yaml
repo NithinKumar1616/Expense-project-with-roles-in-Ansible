@@ -1,0 +1,4 @@
+component: frontend
+Hosts: backend-server
+App_locatin: /usr/share/nginx/html
+component: frontend
